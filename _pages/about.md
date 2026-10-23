@@ -52,10 +52,15 @@ State-space equations, autocorrelation and cross-correlation, decomposition, Fou
 
 ## Education
 
-- **PhD, [TODO(Adi): programme], [TODO(Adi): university]** | [TODO(Adi): Mon YYYY] – present<br>
+- **PhD Candidate, Department of Data Science, Norwegian University of Life Sciences (NMBU), Norway** | Mar 2024 – Mar 2027<br>
   Thesis: _"Long Term Time Series Forecasting with Minimal Parameters for Higher Inference"_
 - **MSc in Data Science, Norwegian University of Life Sciences (NMBU), Norway** | Aug 2021 – May 2023<br>
   Thesis on feature engineering for numerical and embedded features, with non-linear regression models (Random Forest, SVR, AdaBoost, XGBoost, neural networks), hyperparameter search, cross-validation and model explanation with partial dependence plots and SHAP.
+
+## Publications
+
+- **A. Dey**, J. Kusch, F. Al Machot. FragFM: Fragmented Fourier Matrix for multi-seasonality extraction in Univariate Long-Term Time Series Forecasting. _Norsk IKT-konferanse for forskning og utdanning (NIK 2025)_, Nov 2025.
+- **A. Dey**, J. Kusch, F. Al Machot. [HADL Framework for Noise Resilient Long-Term Time Series Forecasting](https://arxiv.org/abs/2502.10569). _arXiv:2502.10569_, Feb 2025.
 
 ## Consulting experience
 

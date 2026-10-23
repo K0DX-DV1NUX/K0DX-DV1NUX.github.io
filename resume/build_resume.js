@@ -22,6 +22,7 @@ const contact = (children) => new Paragraph({ alignment: AlignmentType.CENTER, s
 const heading = (text) =>
   new Paragraph({
     spacing: { before: 280, after: 120 },
+    keepNext: true,
     border: { bottom: { style: BorderStyle.SINGLE, size: 6, color: "000000", space: 1 } },
     children: [run(text, { size: 24 })],
   });
@@ -30,6 +31,7 @@ const heading = (text) =>
 const entry = (dates, title, place, lines) => [
   new Paragraph({
     spacing: { before: 160, after: 20 },
+    keepNext: true,
     tabStops: [
       { type: TabStopType.LEFT, position: COL2 },
       { type: TabStopType.RIGHT, position: TEXT_W },
@@ -51,6 +53,14 @@ const bullet = (label, text) =>
     numbering: { reference: "bullets", level: 0 },
     spacing: { after: 40 },
     children: label ? [run(label + ": ", { bold: true }), run(text)] : [run(text)],
+  });
+
+// own name in bold, as the UiO/NTNU guide asks for research CVs
+const pub = (title, venue) =>
+  new Paragraph({
+    numbering: { reference: "bullets", level: 0 },
+    spacing: { after: 60 },
+    children: [run("A. Dey", { bold: true }), run(", J. Kusch, F. Al Machot. "), run(title + " "), run(venue, { italics: true })],
   });
 
 const doc = new Document({
@@ -109,7 +119,7 @@ const doc = new Document({
         }),
 
         heading("EDUCATION"),
-        ...entry("[Mon YYYY] – present", "PhD, [programme]", "[University]", [
+        ...entry("Mar 2024 – Mar 2027", "PhD Candidate, Department of Data Science", "NMBU, Norway", [
           [
             run("Thesis: ", { size: 19 }),
             run("“Long Term Time Series Forecasting with Minimal Parameters for Higher Inference”", { italics: true, size: 19 }),
@@ -144,7 +154,11 @@ const doc = new Document({
         bullet("Battery modelling", "P2D lithium-ion models (DFN, SPMe, SPM) and surrogate modelling."),
 
         heading("PUBLICATIONS"),
-        bullet(null, "[Full citations with Aditya Dey in bold; see Google Scholar profile above]"),
+        pub(
+          "FragFM: Fragmented Fourier Matrix for multi-seasonality extraction in Univariate Long-Term Time Series Forecasting.",
+          "Norsk IKT-konferanse for forskning og utdanning (NIK 2025), Nov 2025."
+        ),
+        pub("HADL Framework for Noise Resilient Long-Term Time Series Forecasting.", "arXiv:2502.10569, Feb 2025."),
 
         heading("CONSULTING EXPERIENCE"),
         ...entry("Sep 2019 – Aug 2021", "Data Analyst", "Mastercard, India", [
