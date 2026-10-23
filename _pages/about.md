@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: PhD researcher in machine learning · Long-term time series forecasting · Battery modelling · Parameter-space reduction
+subtitle: PhD researcher · Long-term time series forecasting · Minimal-parameter models · TinyML
 
 # TODO(Adi): add a profile photo by saving it as assets/img/prof_pic.jpg and uncommenting the block below.
 # profile:
@@ -22,32 +22,38 @@ latest_posts:
 
 **[Download resume (PDF)]({{ '/assets/pdf/Aditya_Dey_Resume.pdf' | relative_url }})** · **[LinkedIn](https://www.linkedin.com/in/aditya-dey/)** · **[Google Scholar](https://scholar.google.com/citations?user=hga1oAMAAAAJ&hl=en)** · **[GitHub](https://github.com/K0DX-DV1NUX)**
 
-I am a PhD researcher in machine learning who builds small models that still forecast well, after nine years as an IT and data consultant and an MSc in Data Science. My work covers two areas, long-term time series forecasting (LTSF) and physics-based lithium-ion battery modelling. Both come down to the same question: how many parameters does a model really need? I answer it with signal processing, linear algebra and knowledge distillation. The goal is models compact enough for TinyML and edge hardware that keep the accuracy of much larger ones.
+I am a PhD researcher in long-term time series forecasting (LTSF). My thesis, _"Long Term Time Series Forecasting with Minimal Parameters for Higher Inference"_, asks how small a forecasting model can be. I design architectures with far fewer parameters, which lowers the FLOPs needed at test time and gives faster inference. The models also become small enough for the TinyML domain. Before the PhD I spent nine years as an IT and data consultant and completed an MSc in Data Science.
 
 ## Research
 
-**Long-term time series forecasting with compact models.**
-I work with Transformer forecasters such as PatchTST and iTransformer and try to shrink them. Patching, frequency-domain representations (DFT, DCT, DWT), convolutional attention and low-rank approximations of the weight matrices all cut the parameter space. Knowledge distillation (online, offline and self-distillation) moves what a large teacher knows into a small student.
+**Minimal-parameter architectures for LTSF.**
+I build forecasting models from the ground up with a small parameter budget, measured in parameter count, FLOPs, inference speed and model size.
 
-**Surrogate models of battery electrochemistry.**
-I study the pseudo-two-dimensional (P2D) family of lithium-ion battery models: the Doyle–Fuller–Newman (DFN) model, the Single Particle Model with electrolyte (SPMe) and the Single Particle Model (SPM). I build data-driven and state-space surrogates that reproduce their behaviour at a fraction of the cost, so they can run where a full P2D solver cannot.
+**Low-rank models.**
+I use low-rank approximations to minimise weights, including LoRA, VeRA, Tied-LoRA and complex-valued LoRA, used as standalone models rather than as fine-tuning adapters.
 
-**Parameter-space reduction** connects the two: finding the smallest representation of a model that keeps the accuracy that matters.
+**Knowledge distillation.**
+I transfer what large foundation models and supervised models know into my lightweight models, so they stay accurate and become deployable.
+
+**Time series analysis and signal processing.**
+State-space equations, autocorrelation and cross-correlation, decomposition, Fourier and wavelet transforms, and seasonality extraction with structured matrices such as circulant matrices.
 
 ## Skills
 
-- **Time series forecasting:** long-term time series forecasting (LTSF), PatchTST, iTransformer, Transformers, patching
-- **Model compression:** parameter-space reduction, low-rank approximation, knowledge distillation (online, offline, self), convolutional attention, TinyML
+- **Time series analysis:** state-space equations, autocorrelation, cross-correlation, decomposition, seasonality extraction with circulant matrices
 - **Signal processing:** Discrete Fourier Transform (DFT), Discrete Cosine Transform (DCT), Discrete Wavelet Transform (DWT)
-- **Modelling:** state-space models, surrogate modelling, P2D battery models (DFN, SPMe, SPM)
+- **Parameter-efficient modelling:** low-rank approximation, LoRA, VeRA, Tied-LoRA, complex-valued LoRA, FLOP and parameter reduction, TinyML
+- **Knowledge distillation:** from foundation and supervised teachers to lightweight students (online, offline, self-distillation)
+- **Architectures:** RNN, LSTM, GRU, Echo State Network (ESN), TCN, MLP, self-attention, patch-based attention (PatchTST, iTransformer)
+- **Battery modelling:** P2D lithium-ion models (DFN, SPMe, SPM), surrogate modelling
 - **Research writing:** LaTeX, mathematical derivation and proof
-- **Programming and ML tools:** Python, PyTorch, TensorFlow, Keras, scikit-learn, SciPy, Git <!-- TODO(Adi): confirm PyTorch and add PhD tools such as PyBaMM if used -->
+- **Programming and ML tools:** Python, PyTorch, TensorFlow, Keras, scikit-learn, SciPy, NumPy, Git
 - **Data engineering:** SQL (Oracle, MS SQL), PySpark, BigQuery, MongoDB, ETL pipelines, Power BI, AWS, GCP
 
 ## Education
 
 - **PhD, [TODO(Adi): programme], [TODO(Adi): university]** | [TODO(Adi): Mon YYYY] – present<br>
-  Thesis topic: [TODO(Adi): working title, e.g. compact models for long-term time series forecasting and battery surrogate modelling]
+  Thesis: _"Long Term Time Series Forecasting with Minimal Parameters for Higher Inference"_
 - **MSc in Data Science, Norwegian University of Life Sciences (NMBU), Norway** | Aug 2021 – May 2023<br>
   Thesis on feature engineering for numerical and embedded features, with non-linear regression models (Random Forest, SVR, AdaBoost, XGBoost, neural networks), hyperparameter search, cross-validation and model explanation with partial dependence plots and SHAP.
 
